@@ -4,7 +4,7 @@
 This repository contains the source code for the **Project Name**. Below, you'll find a description of the project's structure, architecture, and instructions for setup and execution.
 
 ### Architectural Diagram
-![Architectural Diagram](\ProjectPhotos\UML class.png)
+![Architectural Diagram](\ProjectPhotos\UMLclass.png)
 
 ---
 
@@ -94,9 +94,9 @@ Ensure you have the following dependencies installed:
 
 ### Testing Proof / Screenshots
 
-1. All Passing Unit Tests![UnitTestsPassing](ProjectPhotos/Screenshot 2024-12-01 000602.png)
-2. Unit Tests Achieving 100% Coverage![UnitTesting100%Coverage](ProjectPhotos%2FScreenshot%202024-12-01%20001549.png)
-3. All Passing Playwright Tests ![PlaywrightTestsPassing](ProjectPhotos%2FScreenshot%202024-12-01%20002236.png)
+1. All Passing Unit Tests![UnitTestsPassing](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01000602.png)
+2. Unit Tests Achieving 100% Coverage![UnitTesting100%Coverage](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01001549.png)
+3. All Passing Playwright Tests ![PlaywrightTestsPassing](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01002236.png)
 
 ### (YouTube) Link to Presentation Video
 
