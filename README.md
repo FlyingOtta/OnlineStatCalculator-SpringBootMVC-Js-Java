@@ -98,7 +98,6 @@ Ensure you have the following dependencies installed:
 2. Unit Tests Achieving 100% Coverage![UnitTesting100%Coverage](ProjectPhotos/Screenshot2024-12-01001549.png)
 3. All Passing Playwright Tests ![PlaywrightTestsPassing](ProjectPhotos/Screenshot2024-12-01002236.png)
 
-These photos load perfectly in my readme in my IDE but not in get
 
 ### (YouTube) Link to Presentation Video
 
