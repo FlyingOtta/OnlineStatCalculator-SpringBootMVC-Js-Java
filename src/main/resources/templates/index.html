@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .error-box {
+            background-color: #FFCCCC;
+            color: red;
+            border: 1px solid red;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            white-space: pre-line; /* Ensures newline formatting is respected */
+        }
+        .result {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculator</h1>
+    <button onclick="clearValues()">Clear</button>
+
+    <!-- Error Box -->
+    <div th:if="${error != null}" class="error-box">
+        <span th:text="${error}"></span>
+    </div>
+
+    <div class="section">
+        <p style="background-color: #FFEBC1; padding: 10px; text-align: center;">
+            Enter values below, then select an operation
+        </p>
+    </div>
+    <div class="section">
+        <label for="values"><strong>Values</strong></label>
+        <textarea id="values" name="values" placeholder="Enter one value per line"></textarea>
+    </div>
+    <div class="section">
+        <h3>Descriptive Statistics</h3>
+        <button onclick="submitForm('sampleStdDev')">Compute Sample Standard Deviation | one value per line</button>
+        <button onclick="submitForm('populationStdDev')">Compute Population Standard Deviation | one value per line</button>
+        <button onclick="submitForm('mean')">Compute Mean | one value per line</button>
+        <button onclick="submitForm('zScore')">Compute Z Score | value, mean, stdDev on one line</button>
+    </div>
+    <div class="section">
+        <h3>Single Linear Regression</h3>
+        <button onclick="submitForm('linearRegression')">Compute Linear Regression | one x,y pair per line</button>
+        <button onclick="submitForm('predictY')">Predict Y | x,m,b on one line separated by commas</button>
+    </div>
+    <div class="section">
+        <p th:if="${result != null}" class="result">
+            Result: <span th:text="${result}"></span>
+        </p>
+        <p th:if="${slope != null and intercept != null}" class="result">
+            Slope: <span th:text="${slope}"></span><br>
+            Intercept: <span th:text="${intercept}"></span>
+        </p>
+    </div>
+</div>
+<script>
+    function clearValues() {
+        // Clear input field
+        document.getElementById("values").value = "";
+
+        // Reload the page to clear results and error messages
+        window.location.href = "/";
+    }
+
+   function submitForm(operation) {
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = `/calculate?operation=${operation}`;
+
+    const valuesField = document.getElementById('values').value.trim();
+
+    // Ensure the values parameter is always included
+    const hiddenField = document.createElement('input');
+    hiddenField.type = 'hidden';
+    hiddenField.name = 'values';
+    hiddenField.value = valuesField;
+    form.appendChild(hiddenField);
+
+    // Clear any existing error messages
+    const errorBox = document.querySelector('.error-box');
+    if (errorBox) {
+        errorBox.style.display = 'none';
+        errorBox.innerText = '';
+    }
+
+    if (operation === 'zScore') {
+        // Validate and ensure proper formatting for Z-score inputs
+        const params = valuesField.split(",");
+        if (params.length !== 3 || params.some(param => isNaN(param.trim()))) {
+            if (errorBox) {
+                errorBox.style.display = 'block';
+                errorBox.innerText = "Invalid input. Please provide three numeric values separated by commas (e.g., value,mean,stdDev).";
+            }
+            // Allow form submission so backend validation can also occur
+        } else {
+            // Add extraParams only if the input is valid
+            const extraParamsField = document.createElement('input');
+            extraParamsField.type = 'hidden';
+            extraParamsField.name = 'extraParams';
+            extraParamsField.value = params.map(param => param.trim()).join(",");
+            form.appendChild(extraParamsField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+</script>
+</body>
+</html>
