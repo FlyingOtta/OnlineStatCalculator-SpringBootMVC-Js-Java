@@ -4,7 +4,7 @@
 This repository contains the source code for the **Project Name**. Below, you'll find a description of the project's structure, architecture, and instructions for setup and execution.
 
 ### Architectural Diagram
-![Architectural Diagram](\ProjectPhotos\UMLclass.png)
+![Architectural Diagram](ProjectPhotos/UMLclass.png)
 
 ---
 
@@ -94,9 +94,11 @@ Ensure you have the following dependencies installed:
 
 ### Testing Proof / Screenshots
 
-1. All Passing Unit Tests![UnitTestsPassing](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01000602.png)
-2. Unit Tests Achieving 100% Coverage![UnitTesting100%Coverage](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01001549.png)
-3. All Passing Playwright Tests ![PlaywrightTestsPassing](C:\Users\gavin\IdeaProjects\Calculator\ProjectPhotos\Screenshot2024-12-01002236.png)
+1. All Passing Unit Tests![UnitTestsPassing](ProjectPhotos/Screenshot2024-12-01000602.png)
+2. Unit Tests Achieving 100% Coverage![UnitTesting100%Coverage](ProjectPhotos/Screenshot2024-12-01001549.png)
+3. All Passing Playwright Tests ![PlaywrightTestsPassing](ProjectPhotos/Screenshot2024-12-01002236.png)
+
+These photos load perfectly in my readme in my IDE but not in get
 
 ### (YouTube) Link to Presentation Video
 
