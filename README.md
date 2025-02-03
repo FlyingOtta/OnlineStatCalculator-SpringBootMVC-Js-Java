@@ -1,4 +1,4 @@
-# Project Name
+# Online Statistics Calculator
 
 ## Overview
 This repository contains the source code for the **Project Name**. Below, you'll find a description of the project's structure, architecture, and instructions for setup and execution.
