@@ -1,7 +1,9 @@
 # Online Statistics Calculator
 
 ## Overview
-This repository contains the source code for the **Project Name**. Below, you'll find a description of the project's structure, architecture, and instructions for setup and execution.
+This repository hosts the **Online Statistics Calculator**, a Java-based web application built with **Spring Boot** following the **MVC (Model-View-Controller)** pattern. It leverages **Maven** for dependency management and build automation. 100% code coverage testing is achieved by using **JUnit** for unit and integration tests, and **Playwright** for cross-browser end-to-end testing. 
+
+Below, you will find details about the project’s architecture, along with instructions to set up, run, and test the application.
 
 ### Architectural Diagram
 ![Architectural Diagram](ProjectPhotos/UMLclass.png)
